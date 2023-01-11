@@ -4,7 +4,7 @@
  * @param $query
  * @return void
  */
-function expo_exclude_posts_from_custom_post_type_and_custom_taxonomy( $query ) {
+function exclude_posts_from_custom_post_type_and_custom_taxonomy( $query ) {
     if ( get_the_ID() == 117298 || is_archive() ) {
         // 117298 is the id of the page where we want to display the posts of link category.
         // is_archive() is used to display the posts on archive page of link category.
@@ -23,4 +23,4 @@ function expo_exclude_posts_from_custom_post_type_and_custom_taxonomy( $query ) 
         ) );
     }
 }
-add_action( 'pre_get_posts', 'expo_exclude_posts_from_custom_post_type_and_custom_taxonomy', 100 );
+add_action( 'pre_get_posts', 'exclude_posts_from_custom_post_type_and_custom_taxonomy', 100 );
